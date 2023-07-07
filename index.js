@@ -15,7 +15,8 @@ async function main() {
             var searchExp = new RegExp(unsafeWords.join("|"),"gi");
             // regularExpression.test(string) returns true or false
             if(searchExp.test(userInput)) {
-                console.log(colors.red("You have an unsafe word in the input. This question will not be sent to gpt server. Don't worry. It will not be stored in the history too."));
+                console.log(colors.green("Bot:") + colors.red("You have an unsafe word in the input. This question will not be sent to gpt server. Don't worry. It will not be stored in the history too."));
+                continue;
             } else {
                 const messages = chatHistory.map(([role, content]) => ({ role, content }))
 
